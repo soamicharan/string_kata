@@ -14,17 +14,17 @@ RSpec.describe 'string kata' do
     expect(add("1,2.1")).to eq(3.1)
   end
   
-  it 'raises an error on empty string input' do
-    expect { add("") }.to raise_error(ArgumentError, "Input string cannot be empty.")
+  it 'sum on empty string input' do
+    add("").to eq(0)
   end
   
-  it 'raises an error on empty value between delimiter' do
-    expect { add("1,,3") }.to raise_error(ArgumentError, "Input string contains empty values.")
+  it 'sum on empty value between delimiter' do
+    add("1,,3").to eq(4)
   end
   
   
-  it 'raises an error on input string ends with delimiter' do
-    expect { add("1,2,") }.to raise_error(ArgumentError, "Input string contains empty values.")
+  it 'sum on input string ends with delimiter' do
+    add("1,2,") }.to eq(3)
   end
   
   [

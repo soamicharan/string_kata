@@ -28,10 +28,6 @@ def add(numbers)
     # If delimiter detected then parse number buffer to number and add it to total
     # Reset the number buffer
     elsif delimiters.include?(number)
-      # Special case when number buffer either empty or only contain negetive sign or decimal then consider as empty.
-      if number_buffer.empty? || ['.', '-'].include?(number_buffer)
-        raise ArgumentError, "Input string contains empty values."
-      end
       total += parse_to_number(number_buffer)
       number_buffer = ""
       
@@ -41,10 +37,6 @@ def add(numbers)
     end
   end
     
-  # Final case when loop terminates with remainder number buffer need to process
-  if number_buffer.empty? || ['.', '-'].include?(number_buffer)
-    raise ArgumentError, "Input string contains empty values."
-  end
   total += parse_to_number(number_buffer)
     
   # return the sum
