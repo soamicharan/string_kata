@@ -1,4 +1,3 @@
-# spec/main_spec.rb
 require 'spec_helper'
 require_relative '../lib/main'
 
@@ -21,6 +20,11 @@ RSpec.describe 'string kata' do
   
   it 'raises an error on empty value between delimiter' do
     expect { add("1,,3") }.to raise_error(ArgumentError, "Input string contains empty values.")
+  end
+  
+  
+  it 'raises an error on input string ends with delimiter' do
+    expect { add("1,2,") }.to raise_error(ArgumentError, "Input string contains empty values.")
   end
   
   [
