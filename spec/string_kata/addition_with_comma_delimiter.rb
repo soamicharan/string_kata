@@ -23,8 +23,8 @@ RSpec.describe 'string kata' do
   end
   
   
-  it 'sum on input string ends with delimiter' do
-    add("1,2,") }.to eq(3)
+  it 'raise error on input string ends with delimiter' do
+    expect {add("1,2,") }.to raise_error(ArgumentError, "Input string is invalid as ends with delimiter")
   end
   
   [

@@ -36,7 +36,11 @@ def add(numbers)
       raise ArgumentError, "Input string contains non numeric character #{number}."
     end
   end
-    
+  
+  if number_buffer.empty?
+    raise ArgumentError,"Input string is invalid as ends with delimiter"
+  end
+  
   total += parse_to_number(number_buffer)
     
   # return the sum
