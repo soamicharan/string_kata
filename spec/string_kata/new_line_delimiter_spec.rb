@@ -7,7 +7,7 @@ RSpec.describe 'string kata' do
   end
 
   it 'add numbers with new line delimiter only' do
-    expect(add("1\n2\n3")).to eq(6)
+    add("1\n2\n3").to eq(6)
   end
   
   it 'sum on empty value between different delimiters' do
