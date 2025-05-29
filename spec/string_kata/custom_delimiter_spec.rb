@@ -10,8 +10,8 @@ RSpec.describe 'string kata' do
     add("//\n\n1\n2\n3").to eq(6)
   end
   
-  it 'raise error or delimiter differed from format' do
-    expect { add("//;\n1,3") }.to raise_error(ArgumentError, "Invalid delimiter , in input.")
+  it 'add numbers with delimiters differed from format' do
+    add("//;\n1,3") }.to eq(4)
   end
   
   it 'raises an error on invalid delimiter format' do
