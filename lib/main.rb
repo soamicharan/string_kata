@@ -44,5 +44,5 @@ def add(numbers)
     |numeric_string| parse_to_number(numeric_string)
   }
     
-  numbers_format.sum
+  numbers_format.filter{ |num| num < 1000 }.sum
 end
