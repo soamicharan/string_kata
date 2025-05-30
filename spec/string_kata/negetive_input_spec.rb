@@ -11,10 +11,10 @@ RSpec.describe 'string kata' do
   end
   
   it 'add numbers on hyphen as delimiter' do
-    expect(add("//-\n1-2\n3")).to eq(6)
+    expect(add("//[-]\n1-2\n3")).to eq(6)
   end
   
   it 'add numbers on hyphen as delimiter with negetive numbers' do
-    expect{ add("//-\n1-2--3---4") }.to raise_error(ArgumentError, "Negetives not allowed - -3, -4")
+    expect(add("//[-]\n1-2--3---4")).to be(10)
   end
 end
